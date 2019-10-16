@@ -1,0 +1,15 @@
+import javax.swing.*;
+public class Wages
+{
+public static void main(String args[])
+{
+	JOptionPane.showMessageDialog(null, "We are going to calculate Salary Wages.");
+ 	double hours=Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the hours."));
+ 	double wages=0.0;
+ 	if(hours>40)
+  	  wages=40 * 8.25 + (hours-40)*8.25 * 1.5;
+	else if(hours<=40)
+ 	  wages=hours * 8.25;
+	JOptionPane.showMessageDialog(null,"the total wages="+wages);
+}
+}
