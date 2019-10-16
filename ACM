@@ -1,0 +1,54 @@
+#Abstract method Example
+
+abstract class Animal
+{
+	private String nameOfAnimal;
+	public abstract void speak();
+	public String getAnimalName()
+	{
+		return nameOfAnimal;
+	}	
+	public void setAnimalName(String name)
+	{
+		nameOfAnimal=name;
+	}
+}
+class Dog extends Animal
+{
+	public void speak()
+	{
+		System.out.println("woof!");
+	}
+}
+class Snake extends Animal
+{
+	public void speak()
+	{
+		System.out.println("hisssssss!");
+	}
+}
+class Cow extends Animal
+{
+	public void speak()
+	{
+		System.out.println("Moo!");
+	}
+}
+class UseAnimals
+{
+	public static void main(String args[])
+	{
+		Dog myDog=new Dog();
+		Snake mySnake=new Snake();
+		Cow myCow=new Cow();
+		myDog.setAnimalName("My Dog Murphy");
+		mySnake.setAnimalName("My Snake Sammy");
+		myCow.setAnimalName("My Cow Elsie");
+		System.out.print(myDog.getAnimalName()+" "+"says"+" ");
+		myDog.speak();
+		System.out.print(mySnake.getAnimalName()+" "+"says"+" ");
+		mySnake.speak();
+		System.out.print(myCow.getAnimalName()+" "+"says"+" ");
+		myCow.speak();
+	}
+}
