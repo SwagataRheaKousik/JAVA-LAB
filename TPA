@@ -1,0 +1,51 @@
+#PoolAssociates class
+import javax.swing.*;
+public class PoolAssociates
+{  
+   private int width,length,depth;
+   double capacity,volume;
+   public PoolAssociates(int w,int l,int d)
+   {
+     width=w;
+     length=l;
+     depth=d;
+    }
+    public void capacity()
+	  {
+	    volume=width*length* depth;
+	    JOptionPane.showMessageDialog(null," the volume is "+volume);
+	    capacity=volume*7.5;
+	    JOptionPane.showMessageDialog(null,"the capaciy is "+capacity);	
+	}
+  public void calculateHours()
+	{
+	  double minutes=capacity/50;
+	  double hours=minutes/60;
+	  double fees=hours*8;
+	  double tfees=fees+75;
+	  JOptionPane.showMessageDialog(null,"the total fees is "+tfees);	
+	}
+}
+
+#swimming class
+
+import javax.swing.*;
+public class Swimming
+{
+  public static void main(String args[])
+	{
+	  int select;
+	  do
+	  {
+	    boolean isYes;
+	    int width,length,depth;
+	    width=Integer.parseInt(JOptionPane.showInputDialog(null,"enter the width"));
+	    length=Integer.parseInt(JOptionPane.showInputDialog(null,"enter the length"));
+	    depth=Integer.parseInt(JOptionPane.showInputDialog(null,"enter the depth "));
+	    PoolAssociates a1=new PoolAssociates(width,length,depth);
+	    a1.capacity();
+	    a1.calculateHours();
+	    select=JOptionPane.showConfirmDialog(null,"do you want to enter more customer details");
+    }while(select==0);
+  }
+}
