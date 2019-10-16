@@ -1,0 +1,48 @@
+abstract class Animalss
+{
+	private String nameOfAnimal;
+	public abstract void speak();
+	public String getAnimalName()
+	{
+		return nameOfAnimal;
+
+	}
+	public void setAnimalName(String name)
+	{
+		nameOfAnimal=name;
+	}
+}
+class Dog extends Animalss
+{
+	public void speak()
+	{
+		System.out.println("Woof!");
+	}
+}
+class Snake extends Animalss
+{
+	public void speak()
+	{
+		System.out.println("Hissssss!");
+	}
+}
+class Cow extends Animalss
+{
+	public void speak()
+	{
+		System.out.println("Moooo!");
+	}
+}
+class AnimalReferenceArray
+{
+	public static void main(String args[])
+	{
+		Animalss ref[]=new Animalss[3];
+		ref[0]=new Dog();
+		ref[1]=new Snake();
+		ref[2]=new Cow();
+		for(int i=0;i<3;i++)
+		 ref[i].speak();
+
+	}	
+}
