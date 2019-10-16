@@ -1,0 +1,37 @@
+import javax.swing.*;
+public class Name
+{
+	  public static void main(String args[]){
+		String n=JOptionPane.showInputDialog(null,"Enter your name");
+		String[] arrofn=n.split(" ");
+		System.out.print(arrofn[0]+" ");
+		for(int i=1;i<=arrofn.length-2;i++)
+		{
+			String first=arrofn[i];
+			System.out.print((first.toUpperCase()).charAt(0)+".");
+		}
+		//System.out.print(" "+(arrofn[arrofn.length-1]).toUpperCase());
+		System.out.print(" "+toDisplayCase(arrofn[arrofn.length-1]));
+	}
+	public static String toDisplayCase(String s) 
+  {
+    final String ACTIONABLE_DELIMITERS = " '-/"; // these cause the character following
+                                                 // to be capitalized
+	  StringBuilder sb = new StringBuilder();
+	  boolean capNext = true;
+	  for (char c : s.toCharArray()) 
+    {
+        c = (capNext) ? Character.toUpperCase(c) : Character.toLowerCase(c);
+        sb.append(c);
+        capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
+    }
+    return sb.toString();
+	}
+}
+
+
+
+
+
+
+
