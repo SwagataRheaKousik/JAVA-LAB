@@ -1,0 +1,29 @@
+import javax.swing.*;
+public class Ticket
+{
+ public static void main(String args[])
+	{
+ 	 int ticketNum;
+	 String snumber=JOptionPane.showInputDialog(null,"enter the six digit ticket number");
+	  ticketNum=Integer.parseInt(snumber);
+	  if(snumber.length()==6 && ticketNum>=0 &&  ticketNum<=9999999)
+	  {
+	    JOptionPane.showMessageDialog(null,"the number entered is  "+snumber);
+	  }
+	  else
+	  {
+      JOptionPane.showMessageDialog(null,"the number entered is not valid ");
+	  }
+	  int removeNum= ticketNum/10;
+	  int lostNum= ticketNum%10;
+    int remainderNum= removeNum%7;
+    if( lostNum==remainderNum)
+		{
+		  JOptionPane.showMessageDialog(null,"the number entered is valid");
+		}
+    else
+    {
+		  JOptionPane.showMessageDialog(null,"the number entered is not valid");
+		}
+	}
+}
