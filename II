@@ -1,0 +1,68 @@
+abstract class Animals
+{
+	public String nameOfAnimal;
+	public abstract void speak();
+	public String getAnimalName()
+	{
+		return nameOfAnimal;
+	}	
+	public void setAnimalName(String name)
+	{
+		nameOfAnimal=name;
+	}
+}
+class Dog extends Animals
+{
+	public void speak()
+	{
+		System.out.println("woof!");
+	}
+}
+interface Worker
+{
+	public void work();
+}
+interface Detective
+{
+	public void detect();
+}
+class DetectiveWorkingDogs extends Dog implements Worker,Detective
+{
+ 	private int hoursOfTraining;
+	public void setHoursOfTraining(int hrs)
+	{
+		hoursOfTraining=hrs;
+	}  
+	public int getHoursOfTraining()
+	{
+		return hoursOfTraining;
+	}
+	public void work()
+	{
+		speak();
+		System.out.println("I am a dog who works");
+		System.out.println("I have"+hoursOfTraining+"hours of professional training!");
+	}
+	public void detect()
+	{
+		speak();
+		System.out.println("I am also trained for Detective work, to help the police.");
+	}
+} 
+public class DemoDectectiveWorkingDog
+{
+	public static void main(String args[])
+	{
+		DetectiveWorkingDogs aSheepHerder = new DetectiveWorkingDogs();
+		aSheepHerder.setAnimalName("Simon, the Border Collie");
+		aSheepHerder.setHoursOfTraining(40);
+		System.out.println(aSheepHerder.getAnimalName()+"says");
+		aSheepHerder.speak();
+		aSheepHerder.work();
+		aSheepHerder.speak();
+		aSheepHerder.detect();
+		System.out.println();
+
+	}
+
+} 
